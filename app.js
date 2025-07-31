@@ -2,19 +2,14 @@
 let amigos = [];
 
 
-// Vinculo al input
-const entrada = document.getElementById("amigo");
-
-
-// Vinculo a la lista de amigos
-const listaAmigos = document.getElementById("listaAmigos");
-
-// Vinculo al elemento resultado para mostrar el resultado del sorteo
-const resultado = document.getElementById("resultado");
-
-
 // Variable para almacenar los ingresos
 let nombre = '';
+
+
+// Vinculo a los elementos del index
+const contenidoInput = document.getElementById("amigo");
+const listaAmigos = document.getElementById("listaAmigos");
+const textoAmigoSorteado = document.getElementById("textoAmigoSorteado");
 
 
 // Funcion para verificar que haya ingresado un valor valido
@@ -38,14 +33,14 @@ function validarAmigo(nombre)
     return true;
 }
 
-// Funcion para limpiar los elementos
+// Funciones  para limpiar los elementos
 function limpiarInput()
 {
-    entrada.value = '';
+    contenidoInput.value = '';
 }
 function limpiartResultado()
 {
-    resultado.textContent = '';
+    textoAmigoSorteado.textContent = '';
 }
 function limpiarListado()
 {
@@ -76,7 +71,7 @@ function actualizarListaEnPantalla()
 // Funcion para agregar un amigo
 function agregarAmigo()
 {
-    nombre = entrada.value;
+    nombre = contenidoInput.value;
 
     if(!validarAmigo(nombre))
     {
@@ -116,7 +111,7 @@ function sortearAmigo()
 
         // Agregamos el amigo sorteado a la pantalla
         limpiartResultado();
-        resultado.textContent = amigos[numeroAleatorio];
+        textoAmigoSorteado.textContent = amigos[numeroAleatorio];
     }
     else
     {
