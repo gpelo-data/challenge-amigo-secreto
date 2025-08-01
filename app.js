@@ -110,7 +110,7 @@ function mostrarResultado(index)
     textoResultado.style.visibility = 'visible';
 
     const div = document.querySelector(".resultado_sorteo");
-    div.style.backgroundImage = "url('../assets/cartel.png')";
+    div.style.backgroundImage = "url('/assets/cartel.png')";
 }
 
 
@@ -158,7 +158,7 @@ function reiniciarSorteo()
     ocultarResultado();
 
     const div = document.querySelector(".resultado_sorteo");
-    div.style.backgroundImage = "url('../assets/gatito-pixel-sin-fondo.png')";
+    div.style.backgroundImage = "url('/assets/gatito-pixel-sin-fondo.png')";
 
     return;
 }
