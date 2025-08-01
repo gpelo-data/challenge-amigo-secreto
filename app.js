@@ -1,70 +1,69 @@
-// Array para almacenar los nombres de los participantes
+// Variables
 let amigos = [];
-
-
-// Variable para almacenar los ingresos
-let nombre = '';
+let amigo_ingresado = '';   // x input
 
 
 // Vinculo a los elementos del index
 const contenidoInput = document.getElementById("amigo");
 const listaAmigos = document.getElementById("listaAmigos");
-const textoAmigoSorteado = document.getElementById("textoAmigoSorteado");
 
 
-// Funcion para verificar que haya ingresado un valor valido
-function validarAmigo(nombre)
-{
-    if(nombre === '')
-    {
-        return false;
-    }
-    else
-    {
-        for(let i=0; i<amigos.length; i++)
-        {
-            if(nombre === amigos[i])
-            {
-                return false;
-            }
-        }
-    }
+// Funciones para verificar que haya ingresado un valor valido
+const noEstaVacio = (nombre) => !(nombre === '');
+const noEstaRepetido = (nombre, lista) => !lista.includes(nombre);
 
-    return true;
-}
 
 // Funciones  para limpiar los elementos
-function limpiarInput()
-{
-    contenidoInput.value = '';
+const limpiarInput = () => {contenidoInput.value = ''; return;}
+
+
+// Funcion para mostrar un mensaje vacio en el listado de amigos si no hay ninguno todavia
+const mostrarMensajeVacio = () => {
+    listaAmigos.innerHTML = '<li class="lista-vacia" id="mensajeVacio">Todavía no ha agregado a ningún amigo.</li>';
+    return;
 }
-function limpiartResultado()
-{
-    textoAmigoSorteado.textContent = '';
-}
-function limpiarListado()
-{
-    listaAmigos.innerHTML = '';
-}
+
+
+// Funcion para validar que la lista de amigos no está vacía
+const noEstaVacia = (lista) => lista.length > 0;
+
+
+// Plantilla para cada elemento de la lista amigos
+const crearPlantillaAmigo = (nombre, index) => `
+    <span class="amigo-nombre">${nombre}</span>
+    <div class="amigo-acciones">
+        <button class="btn-accion btn-editar" onclick="editarAmigo(${index})" title="Editar">
+            <img class="icono-accion" src="https://img.icons8.com/material/50/666666/pencil--v1.png" alt="Editar">
+        </button>
+        <button class="btn-accion btn-eliminar" onclick="eliminarAmigo(${index})" title="Eliminar">
+            <img class="icono-accion" src="https://img.icons8.com/material/50/666666/trash.png" alt="Eliminar">
+        </button>
+    </div>
+`;
+
+
 
 // Funcion para actualizar la lista de amigos en pantalla
 function actualizarListaEnPantalla()
 {
-    const largo = amigos.length;
-
-    // Limpiamos la pantalla de la lista
-    listaAmigos.innerHTML = '';
-
-
-    // Mostramos la lista de amigos en pantalla
-    for(let i=0; i<largo; i++)
+    if(!noEstaVacia(amigos))  // si está vacia
     {
-        const nuevoItem = document.createElement('li');
-
-        nuevoItem.textContent = amigos[i];
-
-        listaAmigos.appendChild(nuevoItem);
+        mostrarMensajeVacio();
     }
+    else
+    {
+        // Limpiamos pantalla
+        listaAmigos.innerHTML = '';
+
+        amigos.forEach((nombre, index) => {
+            const li = document.createElement('li');
+            li.className = 'amigo-item';
+            li.innerHTML = crearPlantillaAmigo(nombre, index);
+            listaAmigos.appendChild(li);
+        });
+    }
+
+    return;
 }
 
 
@@ -73,53 +72,76 @@ function agregarAmigo()
 {
     nombre = contenidoInput.value;
 
-    if(!validarAmigo(nombre))
+    if(!noEstaVacio(nombre))    // Está vacio
     {
-        // Avisamos al usuario que ingrese un nombre válido
-        alert("Por favor, inserte un nombre válido.");
+        alert("Por favor ingresa un nombre.");
     }
     else
     {
-        // Ingresamos el amigo a la lista de amigos
-        amigos.push(nombre);
-
-        actualizarListaEnPantalla();
+        if(!noEstaRepetido(nombre, amigos)) // Está repetido
+        {
+            alert("¡Ese nombre está repetido!");
+        }
+        else
+        {
+            amigos.push(nombre);
+            actualizarListaEnPantalla();
+        }
     }
 
-    // Limpiamos el input
     limpiarInput();
+    actualizarBotonAgregar();
+    actualizarEstadoBotones();
 
     return;
 }
 
 
-
-// Funcion para validar que la lista de amigos no está vacía
-function validarListaConElementos()
+// Funcion mostrar resultado del sorteo
+function mostrarResultado(index)
 {
-    return (amigos.length >0) ? true : false;
+    const textoResultado = document.getElementById('textoResultado');
+    const textoAmigoSorteado = textoResultado.querySelector('.textoAmigoSorteado');
+    
+    // Actualizar el texto con el nombre del amigo
+    textoAmigoSorteado.textContent = amigos[index];
+    
+    // Hacer visible el resultado
+    textoResultado.style.visibility = 'visible';
+
+    const div = document.querySelector(".resultado_sorteo");
+    div.style.backgroundImage = "url('../assets/cartel.png')";
 }
 
 
 // Funcion para sortear amigo
 function sortearAmigo()
 {
-    if(validarListaConElementos())
+    if(noEstaVacia(amigos))
     {
-        // Elegimos el indice aleatorio
         const numeroAleatorio = Math.floor(Math.random() * amigos.length);
 
-        // Agregamos el amigo sorteado a la pantalla
-        limpiartResultado();
-        textoAmigoSorteado.textContent = amigos[numeroAleatorio];
+        mostrarResultado(numeroAleatorio);
     }
     else
     {
-        alert("No ha ingresado amigos todavía");
+        alert("No ha ingresado amigos todavía.");
     }
+
+    limpiarInput();
+    actualizarBotonAgregar();
+    actualizarEstadoBotones();
+
+    return;
 }
 
-
+// Ocultar resultado
+function ocultarResultado()
+{
+    const textoResultado = document.getElementById('textoResultado');
+    
+    textoResultado.style.visibility = 'hidden';
+}
 
 
 // Funcion para reiniciar el sorteo
@@ -128,6 +150,76 @@ function reiniciarSorteo()
     amigos = [];
 
     limpiarInput();
-    limpiarListado();
-    limpiartResultado();
+    actualizarListaEnPantalla();
+ 
+    actualizarBotonAgregar();
+    actualizarEstadoBotones();
+
+    ocultarResultado();
+
+    const div = document.querySelector(".resultado_sorteo");
+    div.style.backgroundImage = "url('../assets/gatito-pixel-sin-fondo.png')";
+
+    return;
+}
+
+function eliminarAmigo(index) {
+    // Confirmar antes de eliminar
+    const amigo = amigos[index];
+    if (confirm(`¿Estás seguro de que quieres eliminar a "${amigo}"?`)) {
+        amigos.splice(index, 1);
+
+        actualizarListaEnPantalla();
+        actualizarEstadoBotones();
+    }
+
+    return;
+}
+
+
+function editarAmigo(index) {
+    const amigo = amigos[index];
+    
+    // Colocar nombre en el input
+    contenidoInput.value = amigo;
+    
+    // Eliminamos de la lista
+    amigos.splice(index, 1);
+    
+    // Actualizar botones
+    actualizarListaEnPantalla();
+    actualizarBotonAgregar();
+    actualizarEstadoBotones();
+    
+    // Enfocar y seleccionar
+    contenidoInput.focus();
+    contenidoInput.select();
+}
+
+
+
+// ========== ESTADO DE LOS BOTONES ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listeners
+    contenidoInput.addEventListener('input', actualizarBotonAgregar);
+    
+    // Estados iniciales
+    actualizarBotonAgregar();
+    actualizarEstadoBotones();
+});
+
+// ========== FUNCIONES DE CONTROL ==========
+function actualizarBotonAgregar() {
+    const botonAgregar = document.querySelector('.button_add');
+    
+    // Activar apenas hay texto
+    botonAgregar.disabled = contenidoInput.value.trim() === '';
+}
+
+function actualizarEstadoBotones() {
+    const botones = document.querySelectorAll('.button_icon');
+    
+    botones.forEach(boton => {
+        boton.disabled = !noEstaVacia(amigos);
+    });
 }

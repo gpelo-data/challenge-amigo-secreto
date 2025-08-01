@@ -1,0 +1,30 @@
+/* Estilo del Header */
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+.titulo_principal 
+{
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.titulo_destacado
+{
+    font-size: 3rem;
+    color:var(--color-secondary);
+    font-weight: normal;    
+    text-shadow: 2px 2px 0px #4a7c59;
+}
+
+.titulo_secundario 
+{
+    font-size: 1.75rem;
+    color: var(--color-text);
+}
