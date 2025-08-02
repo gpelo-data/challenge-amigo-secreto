@@ -22,7 +22,7 @@
 {
     width: 100%;
     height: 180px;
-    background-image: url('../assets/gatito-pixel-sin-fondo.png');
+    background-image: url('/assets/gatito-pixel-sin-fondo.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

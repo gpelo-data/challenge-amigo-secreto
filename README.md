@@ -1,4 +1,4 @@
-# 🧑‍🤝‍🧑 Sorteador de Amigos
+# 🧑‍🤝‍🧑 Amigo Secreto
 Aplicación web sencilla para agregar nombres de amigos, visualizarlos en una lista y realizar un sorteo aleatorio para elegir uno de ellos. Ideal para juegos, rifas o decisiones al azar.
 
 ## 🚀 Funcionalidades
@@ -12,21 +12,73 @@ Aplicación web sencilla para agregar nombres de amigos, visualizarlos en una li
 
 ✅ Validación de entradas vacías o repetidas.
 
+✅ Eliminar un amigo.
+
+✅ Editar el nombre de un amigo ingresado.
+
+
 ## 🧱 Tecnologías usadas
-HTML
+◾ HTML
 
-CSS (opcional, si tenés estilo agregado)
+◾ CSS
 
-JavaScript (puro, sin frameworks)
+◾ JavaScript
 
-## 📋 Instrucciones de uso
-Escribí el nombre de un amigo en el input.
+◾ Chatgpt: para generación de imágenes
 
-Hacé clic en "Agregar".
+◾ Github y Git
 
-Repetí el paso para tantos amigos como quieras.
 
-Presioná "Sortear" para elegir uno al azar.
+## 📋 Amigo Secreto -  Guía de uso
 
-Si querés empezar de cero, usá el botón "Reiniciar".
+**1. Portada**  
+Pantalla inicial de la aplicación Amigo Secreto donde puedes comenzar a organizar tu intercambio de regalos.  
+
+![Portada de la aplicación](screenshots/portada.png)
+
+**2. Input**  
+Ingresa los nombres de los participantes en el campo de texto. Puedes agregar tantos amigos como desees para el sorteo.  
+
+![Pantalla de entrada de datos](screenshots/input.png)
+
+**3. Input-ejemplo**  
+Ejemplo de cómo completar el formulario con nombres de participantes. Simplemente escribe cada nombre y agrégalo a la lista.  
+
+![Ejemplo de entrada de datos](screenshots/input-ejemplo.png)
+ 
+**4. Listado**    
+Visualiza todos los participantes que has agregado. Aquí puedes revisar la lista completa antes de realizar el sorteo.  
+
+![Lista de participantes](screenshots/listado.png)
+
+**5. Editar**    
+Modifica los nombres de los participantes si necesitas hacer algún cambio antes del sorteo final.  
+
+![Función de edición](screenshots/editar.png)
+
+**6. Borrar**    
+Elimina participantes de la lista si es necesario. Confirma la acción para mantener tu lista actualizada.  
+
+![Función de eliminación](screenshots/borrar.png)
+
+**7. Resultado**    
+¡Resultado final! La aplicación muestra quién le toca regalar a quién de manera aleatoria y justa para todos los participantes.  
+
+![Resultado del sorteo](screenshots/resultado.png)
+
+## 📢 Contacto
+
+**Peló Gastón**
+
+<a href="https://www.linkedin.com/in/gpelo-data/" target="_blank">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="16" height="16"/>
+  LinkedIn
+</a>
+
+<br/>
+
+<a href="mailto:gaston.pelo.contacto@gmail.com" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" width="16" height="16"/>
+  gaston.pelo.contacto@gmail.com
+</a>
 
