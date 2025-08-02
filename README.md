@@ -68,8 +68,6 @@ Elimina participantes de la lista si es necesario. Confirma la acción para mant
 
 ## 📢 Contacto
 
-**Peló Gastón**
-
 <a href="https://www.linkedin.com/in/gpelo-data/" target="_blank">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="16" height="16"/>
   LinkedIn

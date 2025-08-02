@@ -331,7 +331,7 @@
     gap: 0.8rem;
     
     /* Limitar altura y activar scroll */
-    max-height: 150px; 
+    max-height: 200px; 
     overflow-y: auto; 
     
     /* Estilo del scroll */
