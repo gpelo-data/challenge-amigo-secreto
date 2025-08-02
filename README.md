@@ -62,7 +62,7 @@ Elimina participantes de la lista si es necesario. Confirma la acción para mant
 ![Función de eliminación](screenshots/borrar.png)
 
 **7. Resultado**    
-¡Resultado final! La aplicación muestra quién le toca regalar a quién de manera aleatoria y justa para todos los participantes.  
+¡Resultado final! La aplicación muestra quién es tu amigo secreto. 
 
 ![Resultado del sorteo](screenshots/resultado.png)
 

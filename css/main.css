@@ -65,7 +65,7 @@
 
 /* Sección de input */
 .section_input {
-    width: 50%;
+    width: 70%;
 }
 
 /* Wrapper que simula ser el input */
@@ -296,7 +296,7 @@
 
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .section_botones {
         gap: 2rem;
     }
@@ -310,6 +310,12 @@
         width: 25px;
         height: 25px;
     }
+
+    section_input,
+    .listado_amigos {
+        width: 90%;
+        max-width: 100%;
+    }
 }
 
 
@@ -317,7 +323,7 @@
 
 /* Sección de lista de amigos */
 .listado_amigos {
-    width: 50%;
+    width: 70%;
     margin-top: 1rem;
 }
 
@@ -433,7 +439,7 @@
 
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .amigo-item {
         padding: 12px 15px;
     }
