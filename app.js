@@ -110,7 +110,7 @@ function mostrarResultado(index)
     textoResultado.style.visibility = 'visible';
 
     const div = document.querySelector(".resultado_sorteo");
-    div.style.backgroundImage = "url('https://gpelo-data.github.io/challenge-amigo-secreto/assets/cartel.png')";
+    div.style.backgroundImage = "url('/challenge-amigo-secreto/assets/cartel.png')";
 }
 
 
@@ -158,7 +158,7 @@ function reiniciarSorteo()
     ocultarResultado();
 
     const div = document.querySelector(".resultado_sorteo");
-    div.style.backgroundImage = "url('https://gpelo-data.github.io/challenge-amigo-secreto/assets/gatito.png')";
+    div.style.backgroundImage = "url('/challenge-amigo-secreto/assets/gatito.png')";
 
     return;
 }

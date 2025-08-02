@@ -22,7 +22,7 @@
 {
     width: 100%;
     height: 180px;
-    background-image: url('https://gpelo-data.github.io/challenge-amigo-secreto/assets/gatito.png');
+    background-image: url('/challenge-amigo-secreto/assets/gatito.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
