@@ -1,6 +1,10 @@
 # 🧑‍🤝‍🧑 Amigo Secreto
 Aplicación web sencilla para agregar nombres de amigos, visualizarlos en una lista y realizar un sorteo aleatorio para elegir uno de ellos. Ideal para juegos, rifas o decisiones al azar.
 
+![Insignia de culminacion](screenshots/ff043987-239b-4661-bdb1-7f4ca6092c48.png)
+
+
+
 ## 🚀 Funcionalidades
 ✅ Agregar nombres sin duplicados.
 
