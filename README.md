@@ -4,6 +4,12 @@ Aplicación web sencilla para agregar nombres de amigos, visualizarlos en una li
 ![Insignia de culminacion](screenshots/ff043987-239b-4661-bdb1-7f4ca6092c48.png)
 
 
+## 🚀Prueba la app
+
+<a href="https://gpelo-data.github.io/challenge-amigo-secreto/" target="_blank">
+  Amigo Secreto
+</a>
+
 
 ## 🚀 Funcionalidades
 ✅ Agregar nombres sin duplicados.
